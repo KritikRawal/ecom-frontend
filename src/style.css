@@ -3,7 +3,7 @@ body{
     padding:0px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 14px;
-    background: #ececec !important;
+    background:  #CDD0DC !important;
 }
 
 .navbar
@@ -12,6 +12,14 @@ body{
 
     /* #f4f3f0 */
 
+}
+.topicspace{
+    letter-spacing: 2px;
+    font-weight:400;
+    font-size: 22px;
+}
+.moreabout{
+    background:rgb(255, 72, 0);
 }
 .navbar-brand
 {
@@ -50,7 +58,7 @@ body{
 }
 .search
 {
-    background:#efefef !important;
+    background: #CDD0DC !important;
     width:100%;
     height:40px;
     border:none;
@@ -60,4 +68,87 @@ body{
 .search:focus
 {
     outline:none;
+}
+.carousel-item img{
+    height:auto;
+}
+.furniture__info
+{
+    width:100%;
+    height:100px;
+    background:burlywood;
+    padding:10px;
+
+}
+.hover{
+    display: inline-block;
+    font-size: 35px;
+    font-family: Cambria;
+    padding: 20px;
+    position: relative;
+    right: -350px;
+
+}
+
+.hover::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: 0.25s ease-out; 
+}
+.hover:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.pic1{
+width: 100px;
+height: 100px
+}
+
+.image__detail
+{
+    width:100%;
+    height:300px;
+    overflow: hidden;
+    padding:0px;
+    
+}
+
+.image__detail img
+{
+    width:100%;
+    height:100%;
+    padding:0px;
+    transition:1s all ease;
+}
+.image__detailtest img
+{
+    width:100%;
+    height:100%;
+    transition:1s all ease;
+}
+
+.image__detail:hover img
+{
+    transform:scale(1.2);
+}
+
+.furniture
+{
+    width:100%;
+    height:100px;
+    background:whitesmoke;
+    padding:220px;
+
+}
+.heading{
+    position: relative;
+    
 }

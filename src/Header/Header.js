@@ -9,7 +9,6 @@ const Header = (props)=>{
  
     return(
         <React.Fragment>
-            
             <Header1/>
             <NavbarLayout/>
         </React.Fragment>

@@ -15,6 +15,7 @@ const NavbarLayout = (props)=>{
       <Link className="nav-link" activeClassName="active_class" to="/register"> Product </Link>
       <Link className="nav-link" activeClassName="active_class" to="/register"> Account </Link>
       <Link className="nav-link" activeClassName="active_class" to="/register"> Contact Us </Link>
+      <Link className="nav-link" activeClassName="active_class" to='/addproduct'>AddProduct</Link>
      
     </Nav>
     
