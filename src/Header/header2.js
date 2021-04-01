@@ -3,6 +3,8 @@ import {Nav,Navbar, NavDropdown} from 'react-bootstrap';
 import {Link,NavLink} from 'react-router-dom'
 
 const NavbarLayout = (props)=>{
+  const token = localStorage.getItem("token");
+  const user = JSON.parse(localStorage.getItem("user"));
     return (
     <React.Fragment>
                 <Navbar  expand="lg">
@@ -15,6 +17,21 @@ const NavbarLayout = (props)=>{
       <NavLink className="nav-link" activeClassName="active_class" to="/AboutUs"> About </NavLink>
       {/* <Link className="nav-link" activeClassName="active_class" to="/Product"> Product </Link> */}
       
+      {
+        token?
+        (
+          user.userType == "Admin"?
+          (
+            <NavLink className="nav-link" activeClassName="active_class" to="/admins"> Admin </NavLink>
+          ):
+          (
+            <></>
+          )
+        ):
+        (
+          <></>
+        )
+      }
       
       <NavLink className="nav-link" activeClassName="active_class" to="#"> Cart</NavLink>
       <NavLink className="nav-link" activeClassName="active_class" to="/register"> Register</NavLink>

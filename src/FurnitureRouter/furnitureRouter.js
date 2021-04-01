@@ -8,6 +8,7 @@ import Product from '../Product/Product';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Admin from '../admin/admin';
 
 
 
@@ -21,6 +22,7 @@ const FurnitureRouter = (props)=>{
             <Route path="/login" component={Login}></Route>
             <Route path="/AboutUs" component={AboutUs}></Route>
             <Route path="/Product" component={Product}></Route>
+            <Route path="/admins" component={Admin}></Route>
         <Footer/>
       </>
     )
