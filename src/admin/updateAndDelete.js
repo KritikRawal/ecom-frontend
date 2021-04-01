@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {Container,Col,Row,Card} from 'react-bootstrap';
 import axios from 'axios';
 import UpdateModal from './UpdateModal';
+import DeleteModal from './DeleteModal';
 
 
 const UpdateAndDelete = (props) => {
@@ -71,7 +72,8 @@ const UpdateAndDelete = (props) => {
                                             <button style={{border:"none",background:"none"}} data-toggle="modal" data-target={`#deleteProduct${product._id}`} className="dropdown-item"> Delete </button>
                                         </div>
                                         </div>
-                                        <UpdateModal item={product} key={product._id}/>
+                                        <UpdateModal item={product} key={`update${product._id}`}/>
+                                        <DeleteModal item={product} key={product._id}/>
                                         
                                     </Col>
                                     
