@@ -4,7 +4,7 @@ import Register from './Register';
 import Login from './Login'
 import { Link, Route } from 'react-router-dom'
 import axios from 'axios';
-import AddProduct from './AddProduct'
+import AddProduct from './AddProduct';
 import React from "react";
 
 

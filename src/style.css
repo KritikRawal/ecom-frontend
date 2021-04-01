@@ -152,3 +152,10 @@ height: 100px
     position: relative;
     
 }
+.F1{
+    background-color: CDD0DC;
+}
+
+.text NavDropdown.Item{
+    padding-left: -200px;
+}
