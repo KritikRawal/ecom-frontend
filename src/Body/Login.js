@@ -3,21 +3,46 @@ import React from "react";
 import { Component,state,loginUser, response } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { isCompositeComponent } from "react-dom/test-utils";
+import swal from 'sweetalert'
 
 class Login extends Component {
+    state={
+        "username":"",
+        "password":""
+    }
     loginUser=(e)=>{
         e.preventDefault();
         const userData={
-            email:this.state.email,
+            username:this.state.username,
             password:this.state.password
         }
-        axios.post("http://localhost:3000/user/login",userData)
-        .then(()=>{
-            localStorage.setItem("token",response.data.token);
-            localStorage.setItem("user",JSON.stringify(response.data.data))
-            window.location.href="/"
+        
+        axios.post("http://localhost:90/funfurnish/login",userData)
+        .then((response)=>{
+            console.log(response);
+            if(response.data.success == true)
+            {
+                swal({
+                    "title":"Success",
+                    "text":response.data.message,
+                    "icon":"success"
+                })
+                localStorage.setItem("token",response.data.token);
+                localStorage.setItem("user",JSON.stringify(response.data.data))
+                window.location.href="/"
+            }
+            else
+            {
+                swal({
+                    "title":"Error",
+                    "text":response.data.message,
+                    "icon":"error"
+                })
+            }
+           
         })
         .catch((err)=>{
+            
             console.log(err)
         }
 
@@ -35,8 +60,8 @@ class Login extends Component {
             <h3>Log in</h3>
 
             <div className="form-group">
-                <label>Email</label>
-                <input type="email" className="form-control" value={this.state.email} onChange={(event)=>{this.setState({email:event.target.value})}} placeholder="Enter email" />
+                <label>Username</label>
+                <input type="text" className="form-control" value={this.state.username} onChange={(event)=>{this.setState({username:event.target.value})}} placeholder="Enter username" />
             </div>
 
             <div className="form-group">

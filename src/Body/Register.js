@@ -1,6 +1,7 @@
 import { Component, state } from "react";
 import {Container, Row, Col, SubmitUser, ThemeProvider} from 'react-bootstrap';
 import axios from 'axios';
+import swal from 'sweetalert'
 
 class Register extends Component{
 
@@ -10,9 +11,8 @@ class Register extends Component{
         email : "",
         address : "",
         phone_number : "",
-        usernanme : "",
-        password : "",
-        usertype : ""
+        username : "",
+        password : ""
 
     }
     SubmitUser=(e)=>{
@@ -23,16 +23,37 @@ class Register extends Component{
             email : this.state.email,
             address : this.state.address,
             phone_number : this.state.phone_number,
-            usertype : this.state.usertype
+            password:this.state.password,
+            username:this.state.username
+           
 
         }
-        axios.post("http://localhost:90/added/insert", userdata)
-        //  .then((userdata)=>{
-        //      res.status(200)
-        //  })
-        //  .catch((err)=> {
-        //  result.status(500)
-        // })
+        console.log(userdata);
+        axios.post("http://localhost:90/added/insert",userdata)
+        .then((response)=>{
+            if(response.data.success == true)
+            {
+                swal({
+                    "title":"Success",
+                    "text":response.data.message,
+                    "icon":"success"
+                })
+                window.location.href="/login" 
+            }
+            else
+            {
+                swal({
+                    "title":"Error",
+                    "text":response.data.message,
+                    "icon":"error"
+                })
+            }
+           
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+       
 
     }
 
@@ -98,16 +119,7 @@ class Register extends Component{
                                                 onChange={(event)=>this.setState({phone_number: event.target.value})} className="form-control" name='ln' required placeholder="Enter phone number"/>
                                             </div>
                                         </div>
-                                        <div className="form-group">
-                                            <label> User_type </label>
-                                            <div className="input-group">
-                                                <div className="input-group-append">
-                                                    {/* <span className="input-group-text icon"></span> */}
-                                                </div>
-                                                <input type="text" value={this.state.usertype}
-                                                onChange={(event)=>this.setState({usertype: event.target.value})} className="form-control" name='ln' required placeholder="Enter phone number"/>
-                                            </div>
-                                        </div>
+                                        
                                         <div className="form-group">
                                             <label> Username </label>
                                             <div className="input-group">
@@ -115,7 +127,7 @@ class Register extends Component{
                                                     {/* <span className="input-group-text icon"></span> */}
                                                 </div>
                                                 <input type="text" value={this.state.usernanme}
-                                                onChange={(event)=>this.setState({usernanme: event.target.value})} className="form-control" name='un' required placeholder="Enter username"/>
+                                                onChange={(event)=>this.setState({username: event.target.value})} className="form-control" name='un' required placeholder="Enter username"/>
                                             </div>
                                         </div>
                                         <div className="form-group">

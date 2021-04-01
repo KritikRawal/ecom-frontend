@@ -159,3 +159,7 @@ height: 100px
 .text NavDropdown.Item{
     padding-left: -200px;
 }
+.active_class
+{
+    border-bottom: 2px solid red;
+}
