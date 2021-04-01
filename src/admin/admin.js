@@ -9,6 +9,7 @@ import {MdTimer} from 'react-icons/md'
 import TabPanel  from './tabPanel';
 import {BiTask} from 'react-icons/bi';
 import AddProduct from './addProduct'
+import UpdateAndDelete from './updateAndDelete'
 
  
 const Admin = () => {
@@ -42,7 +43,7 @@ const Admin = () => {
                            <AddProduct/>
                         </TabPanel>
                         <TabPanel value={value} index={1}>
-                         
+                          <UpdateAndDelete/>
                         </TabPanel>
                         <TabPanel value={value} index={2}>
                          
