@@ -11,7 +11,7 @@ const AddProduct = (props) => {
         "discount":0,
         "availableStock":"",
         "brand":"",
-        "category":"",
+        "category":"Chair",
         "pimage":"",
         "config":{
             "headers":{
