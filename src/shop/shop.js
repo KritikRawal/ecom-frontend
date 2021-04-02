@@ -1,7 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import {Container,Col,Row,Card} from 'react-bootstrap';
 import axios from 'axios';
-import swal from 'sweetalert'
+import swal from 'sweetalert';
+import {FaShoppingCart} from 'react-icons/fa';
+import {Link} from 'react-router-dom'
 
 
 const Shop = (props) => {
@@ -27,6 +29,11 @@ const Shop = (props) => {
             e.target.value
         )
     }
+    var token = localStorage.getItem("token");
+
+    const loginUser = (event)=>{
+        window.location.href = "/login"
+    }
 
     return (
         <React.Fragment>
@@ -47,30 +54,27 @@ const Shop = (props) => {
                             
                             furnitures.map((product)=>{
                                 return(
-                                    <Col lg={3}>
-                                        <Card className="productCard" style={{cursor:"pointer"}} id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <div className="productImg">
+                                    <Col lg={2}>
+                                        <Card className="productCards" style={{cursor:"pointer"}} id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <div className="productImgs">
                                                     <Card.Img variant="top" src={`http://localhost:90/${product.pimage}`} />
                                                 </div>
                                                     <Card.Body>
                                                         <Card.Title className="text-center">{product.pname}</Card.Title>
-                                                        <p> <strong> Brand: </strong> {product.pBrand}  </p>
-                                                        <p> <strong>Available Stock: </strong> {product.availableStock} </p>
-                                                        <p> <strong>Price: </strong> 
+                                                       
+                                                        
+                                                        <div >
                                                             {
-                                                                product.newPrice > 0 ?
+                                                                token?
                                                                 (
-                                                                    <>
-                                                                    <span> Rs {product.newPrice} </span> <span style={{textDecoration:"line-through"}}> Rs {product.pprice} </span> <small> ({product.discount}%) </small>
-                                                                    </>
+                                                                    <Link to={`/singleProduct/`+product._id} style={{color:"black"}}><FaShoppingCart style={{float:"right"}}/></Link>  
                                                                 ):
                                                                 (
-                                                                    <span> Rs {product.pprice} </span>
+                                                                    <p style={{color:"black"}} onClick={(event)=>{loginUser(event)}}><FaShoppingCart style={{float:"right"}}/></p>  
                                                                 )
                                                             }
-                                                         </p>
-    
                                                         
+                                                        </div>
                                                          
        
                                                        

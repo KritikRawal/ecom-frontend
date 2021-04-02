@@ -33,7 +33,7 @@ const NavbarLayout = (props)=>{
         )
       }
       
-      <NavLink className="nav-link" activeClassName="active_class" to="#"> Cart</NavLink>
+      <NavLink className="nav-link" activeClassName="active_class" to="/cart"> Cart</NavLink>
       <NavLink className="nav-link" activeClassName="active_class" to="/register"> Register</NavLink>
       
      

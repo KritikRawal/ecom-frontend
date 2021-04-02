@@ -9,7 +9,6 @@ const TabPanel = (props) => {
             {
                 value == index &&
                 (
-                   
                     <p>{children}</p>
                 )
             }
