@@ -55,7 +55,7 @@ const Shop = (props) => {
                             furnitures.map((product)=>{
                                 return(
                                     <Col lg={2}>
-                                        <Card className="productCards" style={{cursor:"pointer"}} id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <Card className="productCards" style={{cursor:"pointer"}}>
                                                 <div className="productImgs">
                                                     <Card.Img variant="top" src={`http://localhost:90/${product.pimage}`} />
                                                 </div>

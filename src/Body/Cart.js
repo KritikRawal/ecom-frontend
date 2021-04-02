@@ -69,17 +69,22 @@ const Cart = (props) => {
     const minusClick = (event,val) =>{
         var qty = document.querySelector(`.productQuantity${val._id}`);
         var price = document.querySelector(`.price${val._id}`);
+        var avStock = document.querySelector(`.avStock${val._id}`);
         var myQuantity = parseInt(qty.innerHTML);
         var myPrice = parseInt(price.innerHTML);
+      
         var singlePrice = myPrice/myQuantity;
+        var avs = parseInt(avStock.innerHTML);
         if(myQuantity > 1)
         {
             myQuantity-=1;
+            avs+=1;
             axios.post("http://localhost:90/update/booking",{pid:val._id,qty:myQuantity},auth.config)
             .then((response)=>{
                 if(response.data.success == true)
                 {
                     qty.innerHTML = myQuantity;
+                    avStock.innerHTML = avs;
                     price.innerHTML = singlePrice*myQuantity
                     swal(
                         {
@@ -111,18 +116,27 @@ const Cart = (props) => {
 
     const plusClick = (event,val)=>{
         var qty = document.querySelector(`.productQuantity${val._id}`);
+        var avStocks = document.querySelector(`.avStock${val._id}`);
         var price = document.querySelector(`.price${val._id}`);
         var myQuantity = parseInt(qty.innerHTML);
+        
         var myPrice = parseInt(price.innerHTML);
         var singlePrice = myPrice/myQuantity;
-        var avStock = parseInt(val.availableStock);
-        if(myQuantity < avStock)
+        var avStock = parseInt(val.product_id.availableStock);
+        var avs = parseInt(avStocks.innerHTML);
+        
+        if(avStock > 0)
         {
+            avs-=1;
+            console.log(avs)
             myQuantity+=1;
             axios.post("http://localhost:90/update/booking",{pid:val._id,qty:myQuantity},auth.config)
             .then((response)=>{
                 if(response.data.success == true)
                 {
+                    qty.innerHTML = myQuantity;
+                    price.innerHTML = singlePrice*myQuantity
+                    avStocks.innerHTML = avs;
                     swal(
                         {
                             title:"Success",
@@ -163,22 +177,23 @@ const Cart = (props) => {
                        cart.map((val)=>{
                            return(
                                <Col lg={2}>
-                            <Card className="productCards" style={{cursor:"pointer"}} id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <Card className="productCards" style={{cursor:"pointer"}}>
                                                 <div className="productImgs">
                                                     <Card.Img variant="top" src={`http://localhost:90/${val.product_id.pimage}`} />
                                                 </div>
                                                     <Card.Body>
                                                         <Card.Title className="text-center">{val.product_id.pname}</Card.Title>
                                                        
-                                                        
-                                                        <p> Rs <span className={`price${val._id}`}>{val.price}</span> </p>
+                                                        <p> <strong>Available Stock: </strong> <span className={`avStock${val._id}`}> {val.product_id.availableStock} </span> </p>
+                                                        <p><strong>Price: </strong> Rs <span className={`price${val._id}`}>{val.price}</span> </p>
+                                                        <p className="text-center"><strong>Quantity:</strong></p>
                                                          <p className="text-center"> <AiFillMinusCircle style={{fontSize:"21px",color:"pink"}} onClick={(event)=>{minusClick(event,val)}}/>  <span className={`productQuantity${val._id}`}> {val.quantity} </span> <MdAddCircle style={{fontSize:"21px",color:"pink"}} onClick={(event)=>{plusClick(event,val)}}/> </p>
-       
+
                                                        
                                                     </Card.Body>
-
-                                                    <div className="btn btn-danger btn-md mb-2 mr-1 btn-block" onClick={(event)=>{deleteBooking(event,val._id)}} name="delete__booking" > Delete </div>
-                                                
+                                                    <div className="text-center">
+                                                    <div className="btn btn-danger btn-md mb-2 mr-1 w-50" onClick={(event)=>{deleteBooking(event,val._id)}} name="delete__booking" > Delete </div>
+                                                    </div>
      
                                             </Card>
                           </Col>
