@@ -15,6 +15,7 @@ const NavbarLayout = (props)=>{
   <Nav className="ml-5 mr-auto" style={{position:"relative",left:"8%"}}>
       <NavLink className="nav-link" activeClassName="active_class" exact to="/"> Home </NavLink>
       <NavLink className="nav-link" activeClassName="active_class" to="/AboutUs"> About </NavLink>
+      <NavLink className="nav-link" activeClassName="active_class" to="/shop"> Shop </NavLink>
       {/* <Link className="nav-link" activeClassName="active_class" to="/Product"> Product </Link> */}
       
       {
@@ -33,8 +34,16 @@ const NavbarLayout = (props)=>{
         )
       }
       
-      <NavLink className="nav-link" activeClassName="active_class" to="/cart"> Cart</NavLink>
-      <NavLink className="nav-link" activeClassName="active_class" to="/register"> Register</NavLink>
+      {
+        token?
+        (
+          <NavLink className="nav-link" activeClassName="active_class" to="/cart"> Cart </NavLink>
+        ):
+        (
+          <NavLink className="nav-link" activeClassName="active_class" to="/register"> Register</NavLink>
+        )
+      }
+      
       
      
     </Nav>

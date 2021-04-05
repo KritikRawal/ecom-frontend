@@ -169,11 +169,7 @@ const Cart = (props) => {
         <React.Fragment>
             <Container fluid className="mt-2 mb-2">
                 <Row>
-                    
-                
-
-
-                   {
+                {
                        cart.map((val)=>{
                            return(
                                <Col lg={2}>

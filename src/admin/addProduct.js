@@ -122,7 +122,8 @@ const AddProduct = (props) => {
                                 <input type="number" className="form-control" name="discount" value={product['discount']} onChange={(event)=>{changeHandler(event)}} required/>
                             </div>
                             <div className="text-center">
-                                <button className="btn btn-primary btn-md w-50" name="addProduct" type="submit"> Add Product </button>
+                                <button className="btn btn-primary btn-md w-50" name="add
+                                Product" type="submit"> Add Product </button>
                             </div>
                         </form>
                     </Col>
