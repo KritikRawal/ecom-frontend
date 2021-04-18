@@ -35,8 +35,7 @@ const Admin = () => {
                                 
                                 <Tab icon={<AiFillPlusCircle style={{fontSize:"21px"}}/>} label="Add Product"/>
                                 <Tab icon={<MdTimer style={{fontSize:"21px"}}/>} label="Update/Delete"/>
-                                <Tab icon={<BiTask style={{fontSize:"21px"}}/>} label="Tasks"/>
-                                <Tab icon={<AiFillPlusCircle style={{fontSize:"21px"}}/>} label="Extra"/>
+                                
                             </Tabs>
                         </AppBar>
                         <TabPanel value={value} index={0}>
@@ -45,12 +44,7 @@ const Admin = () => {
                         <TabPanel value={value} index={1}>
                           <UpdateAndDelete/>
                         </TabPanel>
-                        <TabPanel value={value} index={2}>
-                         
-                        </TabPanel>
-                        <TabPanel value={value} index={3}>
-                         
-                        </TabPanel>
+                       
                     </div>
                     </Col>   
                     <Col lg={2} className="d-none d-md-block"></Col>
