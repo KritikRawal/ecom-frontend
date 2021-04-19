@@ -8,11 +8,12 @@ import {Link} from 'react-router-dom'
 
 const Shop = (props) => {
     let [type,setCategory] = useState("Chair");
+    console.log(type)
     let [furnitures,setFurniture] = useState([]);
     useEffect(()=>{
         axios.post("http://localhost:90/product/showall",{category:type})
         .then((response)=>{
-            console.log(response)
+          
             if(response.data.success == true)
             {
                 setFurniture(response.data.data)
@@ -21,6 +22,9 @@ const Shop = (props) => {
             {
                 setFurniture([])
             }
+        })
+        .catch((err)=>{
+            console.log(err)
         })
     },[type])
 

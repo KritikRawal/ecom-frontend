@@ -20,9 +20,9 @@ const FurnitureRouter = (props)=>{
             <Route path="/login" component={Login}></Route>
             <Route path="/AboutUs" component={AboutUs}></Route>
             <Route path="/admins" component={Admin}></Route>
-            {/* <Route path="/shop" component={Shop}></Route>
+            <Route path="/shop" component={Shop}></Route>
             <Route path="/singleProduct/:pid" component={SingleProduct}></Route>
-            <Route path="/cart" component={Cart}></Route> */}
+            <Route path="/cart" component={Cart}></Route>
           
         <Footer/>
       </>
