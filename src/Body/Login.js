@@ -55,9 +55,9 @@ class Login extends Component {
                <Row>
                    <Col>
                    </Col>
-                   <Col>
-                   <form>
-            <h3>Log in</h3>
+                   <Col md={6}>
+                   <form className="registerform mt-5 p-5" >
+            <h3 className="text-center text-bold">Log in</h3>
 
             <div className="form-group">
                 <label>Username</label>

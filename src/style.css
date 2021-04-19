@@ -179,6 +179,9 @@ height: 100px
     height:fit-content !important;
     
 }
+.registerform{
+    box-shadow:10px 10px 10px 10px gray;
+  }
 
 .productImg,.productImgs
 {

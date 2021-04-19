@@ -64,8 +64,8 @@ class Register extends Component{
                     <div className="row">
                         <div className = "col-lg-12 mainBackground">
                             <div className="row">
-                                <div className="col-lg-8 d-none d-md-block"></div>
-                                <div className="col-lg-4">
+                                <div className="col-lg-2 d-none d-md-block"></div>
+                                <div className="col-lg-8 registerform mt-5 p-5">
                                     <form method="post" className="login-form">
                                         <h5 className="text-center"> Register </h5>
                                         <div className="form-group">
@@ -144,6 +144,7 @@ class Register extends Component{
                                         <button onClick={this.SubmitUser} type="submit" className="btn btn-primary btn-block" style={{borderRadius:"10px",boxShadow:"inset 0px 0px 5px white",padding:"9px"}} name="register"> Register </button>
                                     </form>
                                 </div>
+                                <div className="col-lg-2 d-none d-md-block"></div>
                             </div>
                         </div>
                     </div>
