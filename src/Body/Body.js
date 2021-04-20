@@ -199,33 +199,7 @@ class Body extends Component {
         </Container>
 
 
-        {/* <Container>
-                <Row>
-                    <Col>
-                    <Route path='/register' component={Register} />
-                    <Route path='/login' component={Login} />
-                    <Route path='/addproduct' component={AddProduct} />
-
-             
-
-                    </Col>
-                    <div>{
-                        this.state.products.map((product)=>{
-                            return (<div>
-                                <p>Id :
-                                {
-                                product.pname 
-                                }
-                                </p>
-                                <p><button onClick={this.DeleteProduct.bind(this, product._id)}>delete</button></p>
-                            </div>
-                                ) 
-                        })
-                    }
-                    </div>
-                    <Col>somethint</Col>
-                </Row>
-             </Container> */}
+        
       </>
     )
   }

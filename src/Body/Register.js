@@ -72,7 +72,7 @@ class Register extends Component{
                                             <label> Fname </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
-                                                    {/* <span className="input-group-text icon"></span> */}
+                                                    
                                                 </div>
                                                 <input type="text" value={this.state.fname} 
                                                 onChange={(event)=>this.setState({fname: event.target.value})} className="form-control" name='fn' required placeholder="Enter Firstname"/>
@@ -83,7 +83,7 @@ class Register extends Component{
                                             <label> Lname </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
-                                                    {/* <span className="input-group-text icon"></span> */}
+                                                    
                                                 </div>
                                                 <input type="text" value={this.state.lname}
                                                 onChange={(event)=>this.setState({lname: event.target.value})} className="form-control" name='ln' required placeholder="Enter Lastname"/>
@@ -93,7 +93,7 @@ class Register extends Component{
                                             <label> Address </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
-                                                    {/* <span className="input-group-text icon"></span> */}
+                                                    
                                                 </div>
                                                 <input type="text" value={this.state.address}
                                                 onChange={(event)=>this.setState({address: event.target.value})} className="form-control" name='ln' required placeholder="Enter Lastname"/>
@@ -103,7 +103,7 @@ class Register extends Component{
                                             <label> Email </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
-                                                    {/* <span className="input-group-text icon"></span> */}
+                                                    
                                                 </div>
                                                 <input type="email" value={this.state.email}
                                                 onChange={(event)=>this.setState({email: event.target.value})} className="form-control" name='ln' required placeholder="Enter email"/>
@@ -113,7 +113,7 @@ class Register extends Component{
                                             <label> Phone_Number </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
-                                                    {/* <span className="input-group-text icon"></span> */}
+                                                    
                                                 </div>
                                                 <input type="text" value={this.state.phone_number}
                                                 onChange={(event)=>this.setState({phone_number: event.target.value})} className="form-control" name='ln' required placeholder="Enter phone number"/>
@@ -124,7 +124,7 @@ class Register extends Component{
                                             <label> Username </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
-                                                    {/* <span className="input-group-text icon"></span> */}
+                                                    
                                                 </div>
                                                 <input type="text" value={this.state.usernanme}
                                                 onChange={(event)=>this.setState({username: event.target.value})} className="form-control" name='un' required placeholder="Enter username"/>
@@ -134,7 +134,7 @@ class Register extends Component{
                                             <label> Password </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
-                                                    {/* <span className="input-group-text icon"></span> */}
+                                                    
                                                 </div>
                                                 <input type="password" value={this.state.password}
                                                 onChange={(event)=>this.setState({password: event.target.value})} className="form-control" name='pw' required placeholder="Enter Password"/>
