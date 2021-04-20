@@ -11,12 +11,12 @@ const Shop = (props) => {
     console.log(type)
     let [furnitures,setFurniture] = useState([]);
     useEffect(()=>{
-        axios.post("http://localhost:90/product/showall",{category:})
+        axios.post("http://localhost:90/product/showall",{category:type})
         .then((response)=>{
           
             if(response.data.success == true)
             {
-                setFurniture(response.data.data)
+             //   setFurniture(response.data.data)
             }
             else
             {
