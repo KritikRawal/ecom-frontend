@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 
 const Shop = (props) => {
-    let [type,setCategory] = useState("Chair");
+    let [type,setCategory] = 
     console.log(type)
     let [furnitures,setFurniture] = useState([]);
     useEffect(()=>{
