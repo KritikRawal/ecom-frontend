@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
+import { Container, Row,Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
 class AboutUs  extends Component {
@@ -7,7 +8,10 @@ class AboutUs  extends Component {
   return (
     <main>
       
-      <Wrapper className="page section section-center">
+     <Container className="my-5">
+       <Row>
+         <Col>
+         <Wrapper className="page section section-center">
         <img src="bed.jpg" alt="about img w-100" />
         <article>
           <div className="title">
@@ -29,6 +33,9 @@ class AboutUs  extends Component {
           </p>
         </article>
       </Wrapper>
+         </Col>
+       </Row>
+     </Container>
     </main>
   );
     }
