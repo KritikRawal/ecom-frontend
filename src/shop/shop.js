@@ -11,7 +11,7 @@ const Shop = (props) => {
     console.log(type)
     let [furnitures,setFurniture] = useState([]);
     useEffect(()=>{
-        axios.post("http://localhost:90/product/showall",{category:type})
+        axios.post("http://localhost:90/product/showall",{category:})
         .then((response)=>{
           
             if(response.data.success == true)
