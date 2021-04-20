@@ -16,7 +16,7 @@ const Shop = (props) => {
           
             if(response.data.success == true)
             {
-             //   setFurniture(response.data.data)
+                setFurniture(response.data.data)
             }
             else
             {
