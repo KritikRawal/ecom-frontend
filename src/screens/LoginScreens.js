@@ -60,4 +60,3 @@ const LoginScreen = ({ location, history }) => {
 }
 
 export default LoginScreen
-sss
