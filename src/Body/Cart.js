@@ -189,6 +189,8 @@ const Cart = (props) => {
                                                     </Card.Body>
                                                     <div className="text-center">
                                                     <div className="btn btn-danger btn-md mb-2 mr-1 w-50" onClick={(event)=>{deleteBooking(event,val._id)}} name="delete__booking" > Delete </div>
+                                                    <div className="btn btn-danger btn-md mb-2 mr-1 w-50" name="delete__booking" > Buy Now </div>
+                                                    
                                                     </div>
      
                                             </Card>
