@@ -6,7 +6,7 @@ import FormContainer from '../components/FormContainer'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { login } from '../actions/userActions'
-
+// create login setup
 
 const LoginScreen = ({ location, history }) => {
     const [email, setEmail] = useState()
