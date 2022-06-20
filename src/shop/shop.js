@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 
 
 const Shop = (props) => {
+    //commnet
     let [type,setCategory] = useState("Chair");
     console.log(type)
     let [furnitures,setFurniture] = useState([]);
