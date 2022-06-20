@@ -35,5 +35,5 @@ const Wrapper = styled.footer`
     flex-direction: row;
   }
 `;
-
+//this is comment
 export default Footer;
