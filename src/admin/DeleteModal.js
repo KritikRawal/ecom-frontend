@@ -3,7 +3,6 @@ import React,{useState,useEffect} from 'react';
 import {Container,Col,Row} from 'react-bootstrap';
 import swal from 'sweetalert'
 
-
 const UpdateModal = (props) => {
     const {item} = props;
     let [product,setProduct]=useState({

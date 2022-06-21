@@ -6,15 +6,17 @@ import {FaShoppingCart} from 'react-icons/fa';
 import {Link} from 'react-router-dom'
 import {MdAddCircle} from 'react-icons/md'
 import {AiFillMinusCircle} from 'react-icons/ai'
+import Khalti from '../components/khalti/khalti';
 
 
 
 const Cart = (props) => {
     let [cart,setCart] = useState([]);
+    
     let [auth,setAuth] = useState({
         "config":{
             "headers":{
-                "authorization":`Bearer ${localStorage.getItem("token")}`
+                "Authorization":`Bearer ${localStorage.getItem("token")}`
             }
         }
     })
@@ -22,11 +24,11 @@ const Cart = (props) => {
     useEffect(()=>{
         axios.get("http://localhost:90/retrieve/myBookings",auth.config)
         .then((response)=>{
-            console.log(response)
-            if(response.data.success == true)
+            console.log(response?.data?.data)
+            if(response.data.success === true)
             {
                 setCart(
-                    response.data.data
+                    response?.data?.data
                     )
             }
             
@@ -34,7 +36,7 @@ const Cart = (props) => {
         .catch((err)=>{
             console.log(err);
         })
-    },[])
+    },[auth.config])
 
     const deleteBooking = (e,id)=>{
         axios.post("http://localhost:90/delete/booking",{pid:id},auth.config)
@@ -170,10 +172,11 @@ const Cart = (props) => {
             <Container fluid className="mt-2 mb-2">
                 <Row>
                 {
-                       cart.map((val)=>{
+                       cart && cart?.map((val)=>{
+console.log(val)
                            return(
                                <Col lg={2}>
-                            <Card className="productCards" style={{cursor:"pointer"}}>
+                            {/* <Card className="productCards" style={{cursor:"pointer"}}>
                                                 <div className="productImgs">
                                                     <Card.Img variant="top" src={`http://localhost:90/${val.product_id.pimage}`} />
                                                 </div>
@@ -189,9 +192,11 @@ const Cart = (props) => {
                                                     </Card.Body>
                                                     <div className="text-center">
                                                     <div className="btn btn-danger btn-md mb-2 mr-1 w-50" onClick={(event)=>{deleteBooking(event,val._id)}} name="delete__booking" > Delete </div>
-                                                    </div>
+                                                   <Khalti className="btn  btn-md mb-2 mr-1 w-50" price={val.price*100}/></div>
+                                                    
+                                                 
      
-                                            </Card>
+                                            </Card> */}
                           </Col>
                            )
                        })
