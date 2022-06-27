@@ -1,0 +1,49 @@
+
+
+.registers{
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(238, 170, 87);
+    position: relative;
+    left:500px;
+    color: white;
+    padding: 10px;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.registerform{
+    border: 2px solid black;
+    background-color: rgb(64, 105, 89);
+    width: 500px;
+    margin-top: -10px;
+    border-radius: 10px;
+    
+   
+
+}
+.text-center{
+    margin-top: -30px;
+    font-size: 50px;
+    color: white;
+}
+
+.reg-btn{
+    position: relative;
+    width: 45%;
+    left:500px;
+}
+
+.registerform{
+    border: 2px solid black;
+}
+.regimgs{
+    
+    height: 500px;
+    position: absolute;
+    top: 150px;
+ 
+}

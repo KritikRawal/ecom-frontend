@@ -2,6 +2,8 @@ import { Component, state } from "react";
 import {Container, Row, Col, SubmitUser, ThemeProvider} from 'react-bootstrap';
 import axios from 'axios';
 import swal from 'sweetalert'
+import "./register.css"
+import RegisterImg from "./register.png"
 
 class Register extends Component{
 
@@ -60,7 +62,7 @@ class Register extends Component{
 
     render(){
         return(
-            <div className="container">
+            <div className="container-register">
                     <div className="row">
                         <div className = "col-lg-12 mainBackground">
                             <div className="row">
@@ -68,8 +70,13 @@ class Register extends Component{
                                 <div className="col-lg-8 registerform mt-5 p-5">
                                     <form method="post" className="login-form">
                                         <h5 className="text-center"> Register </h5>
-                                        <div className="form-group">
-                                            <label> Fname </label>
+
+                                        <div className="regimg">
+                                                <img src={RegisterImg} className="regimgs" alt="" />
+
+                                        </div>
+                                        <div className="form-group registers">
+                                            <label> Name </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
                                                     
@@ -79,17 +86,8 @@ class Register extends Component{
                                                 
                                             </div>
                                         </div>
-                                        <div className="form-group">
-                                            <label> Lname </label>
-                                            <div className="input-group">
-                                                <div className="input-group-append">
-                                                    
-                                                </div>
-                                                <input type="text" value={this.state.lname}
-                                                onChange={(event)=>this.setState({lname: event.target.value})} className="form-control" name='ln' required placeholder="Enter Lastname"/>
-                                            </div>
-                                        </div>
-                                        <div className="form-group">
+                                       
+                                        <div className="form-group registers">
                                             <label> Address </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
@@ -99,17 +97,17 @@ class Register extends Component{
                                                 onChange={(event)=>this.setState({address: event.target.value})} className="form-control" name='ln' required placeholder="Enter Lastname"/>
                                             </div>
                                         </div>
-                                        <div className="form-group">
+                                        <div className="form-group registers">
                                             <label> Email </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
                                                     
                                                 </div>
-                                                <input type="email" value={this.state.email}
+                                                <input type="Email" value={this.state.email}
                                                 onChange={(event)=>this.setState({email: event.target.value})} className="form-control" name='ln' required placeholder="Enter email"/>
                                             </div>
                                         </div>
-                                        <div className="form-group">
+                                        <div className="form-group registers">
                                             <label> Phone_Number </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
@@ -120,7 +118,7 @@ class Register extends Component{
                                             </div>
                                         </div>
                                         
-                                        <div className="form-group">
+                                        <div className="form-group registers">
                                             <label> Username </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
@@ -130,7 +128,7 @@ class Register extends Component{
                                                 onChange={(event)=>this.setState({username: event.target.value})} className="form-control" name='un' required placeholder="Enter username"/>
                                             </div>
                                         </div>
-                                        <div className="form-group">
+                                        <div className="form-group registers">
                                             <label> Password </label>
                                             <div className="input-group">
                                                 <div className="input-group-append">
@@ -141,7 +139,7 @@ class Register extends Component{
                                             </div>
                                         </div>
                                         
-                                        <button onClick={this.SubmitUser} type="submit" className="btn btn-primary btn-block" style={{borderRadius:"10px",boxShadow:"inset 0px 0px 5px white",padding:"9px"}} name="register"> Register </button>
+                                        <button onClick={this.SubmitUser} type="submit" className="btn btn-primary btn-block reg-btn" style={{borderRadius:"10px",boxShadow:"inset 0px 0px 5px white",padding:"9px"}} name="register"> Register </button>
                                     </form>
                                 </div>
                                 <div className="col-lg-2 d-none d-md-block"></div>
