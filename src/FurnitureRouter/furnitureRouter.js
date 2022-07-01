@@ -3,7 +3,7 @@ import {Switch,Route, BrowserRouter} from 'react-router-dom';
 import Login from '../Body/Login';
 import Register from '../Body/Register';
 import Body from '../Body/Body';
-import AboutUs from '../About Us/AboutUs';
+import AboutUs from '../AboutUs/AboutUs';
 import Cart from '../Body/Cart';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
