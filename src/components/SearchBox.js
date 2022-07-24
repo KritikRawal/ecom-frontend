@@ -13,6 +13,7 @@ const SearchBox = ({ history }) => {
             history.push('/')
         }
     }
+    //comment
 
     return (
         <Form onSubmit={submitHandler} inline className='webdesigntuts-workshop'>
