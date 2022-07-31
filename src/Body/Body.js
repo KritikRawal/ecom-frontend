@@ -45,6 +45,7 @@ class Body extends Component {
       .catch((err) => {
         console.log(err.response)
       })
+      //to delete product
   }
   DeleteProduct = (prod_id) => {
     console.log(prod_id);
