@@ -76,7 +76,7 @@ const OrderScreen = ({ match, history }) => {
     }
     return loading ? <Loader /> : error ? <Message variant='danger'>{error} <i class="fas fa-exclamation-triangle"></i></Message> :
         <>
-            <h1>Order {order._id}</h1>
+            <h1>Order </h1>
             <Row>
                 <Col md={8}>
                     <ListGroup variant='flush'>
@@ -91,16 +91,6 @@ const OrderScreen = ({ match, history }) => {
                             </p>
                             {order.isDelivered ? <Message variant='success'> <i className='fas fa-check' style={{ color: 'green' }}></i> Delivered on {order.deliveredAt.substring(0, 10)}</Message> :
                                 <Message variant='danger'>Not Delivered {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (<Button type='button' size='sm' style={{ marginLeft: '50%', top: '10px' }} variant='outline-primary' className='btn btn-block' onClick={deliverHandler}> Mark as delivered </Button>)}</Message>}
-                        </ListGroup.Item>
-
-                        <ListGroup.Item>
-                            <h2>Payment Method</h2>
-                            <p>
-                                <strong>Method: </strong>
-                                {order.paymentMethod}
-                            </p>
-                            {order.isPaid ? <Message variant='success'> <i className='fas fa-check' style={{ color: 'green' }}></i> Paid on {order.paidAt.substring(0, 10)}</Message> :
-                                <Message variant='danger'>Not Paid</Message>}
                         </ListGroup.Item>
 
                         <ListGroup.Item>
@@ -127,6 +117,18 @@ const OrderScreen = ({ match, history }) => {
                                 </ListGroup>
                             )}
                         </ListGroup.Item>
+
+                        <ListGroup.Item>
+                            <h2>Payment Method</h2>
+                            <p>
+                                <strong>Method: </strong>
+                                {order.paymentMethod}
+                            </p>
+                            {order.isPaid ? <Message variant='success'> <i className='fas fa-check' style={{ color: 'green' }}></i> Paid on {order.paidAt.substring(0, 10)}</Message> :
+                                <Message variant='danger'>Not Paid</Message>}
+                        </ListGroup.Item>
+
+                        
                     </ListGroup>
                 </Col>
                 <Col md={4}>
